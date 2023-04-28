@@ -1,7 +1,7 @@
 {
   "name": "oxeye-daisy",
   "license": "MIT",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "scripts": {
     "dev": "vite dev",
     "build": "vite build && npm run package",
@@ -24,9 +24,6 @@
     "!dist/**/*.test.*",
     "!dist/**/*.spec.*"
   ],
-  "peerDependencies": {
-    "svelte": "^3.54.0"
-  },
   "devDependencies": {
     "@sveltejs/adapter-auto": "^2.0.0",
     "@sveltejs/kit": "^1.5.0",
@@ -52,6 +49,7 @@
   "dependencies": {
     "autoprefixer": "^10.4.14",
     "daisyui": "^2.51.6",
-    "postcss": "^8.4.23"
+    "postcss": "^8.4.23",
+    "svelte": "^3.54.0"
   }
 }
