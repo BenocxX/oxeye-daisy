@@ -1,5 +1,5 @@
 <script lang="ts">
-  import Button from '$lib/button/Button.svelte';
+  import { Button } from '$lib/index.js';
 </script>
 
 <Button />
