@@ -1,58 +1,61 @@
-# create-svelte
+# Oxeye Daisy
+A Svelte component librairy using Tailwind + DaisyUI 
 
-Everything you need to build a Svelte library, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
-
-Read more about creating a library [in the docs](https://kit.svelte.dev/docs/packaging).
-
-## Creating a project
-
-If you're seeing this, you've probably already done this step. Congrats!
-
-```bash
-# create a new project in the current directory
-npm create svelte@latest
-
-# create a new project in my-app
-npm create svelte@latest my-app
+## Button
+Import the `Button` component:
+```svelte
+<script lang="ts">
+  import { Button } from 'oxeye-daisy';
+</script>
 ```
 
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
+A simple button:
+```svelte
+<Button>
+  Click me
+</Button>
 ```
 
-Everything inside `src/lib` is part of your library, everything inside `src/routes` can be used as a showcase or preview app.
-
-## Building
-
-To build your library:
-
-```bash
-npm run package
+To customize it's style, you can follow the [DaisyUI documentation](https://daisyui.com/components/button/). Every attributes is customizable via props. Here's an example where we customize the color, the size and the outline:
+```svelte
+<Button color="secondary" size="sm" outline>
+  Click me
+</Button>
 ```
 
-To create a production version of your showcase app:
-
-```bash
-npm run build
+Here's the possible props to customize the `Button` component:
+```svelte
+<script lang="ts">
+  export let color: Color = 'default';
+  export let size: Size = 'md';
+  export let alignment: Alignment = 'center';
+  export let shape: Shape = 'default';
+  export let fontCase: Case = 'default';
+  export let active: boolean = false;
+  export let disabled: boolean = false;
+  export let outline: boolean = false;
+  export let wide: boolean = false;
+  export let block: boolean = false;
+  export let loading: boolean = false;
+  export let noAnimation: boolean = false;
+</script>
 ```
 
-You can preview the production build with `npm run preview`.
+You should get the autocomplete for props like `color`, `size`, etc... The types only represents the possible value offered by DaisyUI.
 
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
-
-## Publishing
-
-Go into the `package.json` and give your package the desired name through the `"name"` option. Also consider adding a `"license"` field and point it to a `LICENSE` file which you can create from a template (one popular option is the [MIT license](https://opensource.org/license/mit/)).
-
-To publish your library to [npm](https://www.npmjs.com):
-
-```bash
-npm publish
+If you want a `input` element of type submit:
+```svelte
+<!--
+export type Input = {
+  value: string;
+  type?: 'button' | 'submit' | 'reset';
+  name?: string;
+};
+-->
+<Button
+  input={{ value: 'Click me', type: 'submit', name: 'name' }}
+  color="secondary"
+  size="sm"
+  outline
+/>
 ```
