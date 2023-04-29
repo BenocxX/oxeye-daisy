@@ -3,6 +3,7 @@
     value: string;
     id?: string;
     onSelect?: () => void;
+    onDeselect?: () => void;
     selected?: boolean;
   };
 </script>
@@ -23,11 +24,21 @@
 
   function select(item: ItemData) {
     if (item.id && item.id !== selectedItem) {
+      const currentItem = getSelectedItem();
+      if (currentItem && currentItem.onDeselect) {
+        currentItem.onDeselect();
+      }
+
       selectedItem = item.id;
+
       if (item.onSelect) {
         item.onSelect();
       }
     }
+  }
+  
+  function getSelectedItem() {
+    return items.find((item) => item.id === selectedItem);
   }
 </script>
 
