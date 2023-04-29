@@ -80,6 +80,8 @@
   );
 
   export let input: Input | undefined = undefined;
+
+  const {input: _, ...props} = $$props;
 </script>
 
 {#if input}
@@ -89,14 +91,14 @@
     type={input.type || 'button'}
     value={input.value}
     name={input.name}
-    {...$$props}
+    {...props}
   />
 {:else}
   <button
     on:click
     class="btn {classes} {$$props.class}"
     disabled={disabled || loading}
-    {...$$props}
+    {...props}
   >
     <slot />
   </button>
