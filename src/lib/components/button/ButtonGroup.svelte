@@ -4,6 +4,7 @@
     horizontal: 'btn-group-horizontal',
     vertical: 'btn-group-vertical',
   };
+
   export type Direction = keyof typeof directions;
 </script>
 
@@ -11,8 +12,10 @@
   import { Group } from '$lib/index.js';
   import { getClasses } from '$lib/utils.js';
   import type { GroupTypes } from '$lib/index.js';
+
   export let direction: Direction = 'default';
   export let buttons: GroupTypes.ItemData[] = [];
+
   $: classes = getClasses(directions[direction]);
 </script>
 

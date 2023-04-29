@@ -9,7 +9,9 @@
 
 <script lang="ts">
   export let items: ItemData[] = [];
+
   let selectedItem: string;
+
   items.forEach((item) => {
     if (!item.id) {
       item.id = crypto.randomUUID();
@@ -18,6 +20,7 @@
       selectedItem = item.id;
     }
   });
+
   function select(item: ItemData) {
     if (item.id && item.id !== selectedItem) {
       selectedItem = item.id;
