@@ -28,11 +28,14 @@
     "@sveltejs/adapter-auto": "^2.0.0",
     "@sveltejs/kit": "^1.5.0",
     "@sveltejs/package": "^2.0.0",
+    "@tailwindcss/typography": "^0.5.9",
+    "@types/prismjs": "^1.26.0",
     "@typescript-eslint/eslint-plugin": "^5.45.0",
     "@typescript-eslint/parser": "^5.45.0",
     "eslint": "^8.28.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-svelte": "^2.26.0",
+    "mdsvex": "^0.10.6",
     "prettier": "^2.8.8",
     "prettier-plugin-svelte": "^2.8.1",
     "prettier-plugin-tailwindcss": "^0.2.8",
@@ -50,6 +53,7 @@
   "dependencies": {
     "autoprefixer": "^10.4.14",
     "daisyui": "^2.51.6",
+    "mdsvexamples": "^0.3.3",
     "postcss": "^8.4.23",
     "svelte": "^3.54.0"
   }

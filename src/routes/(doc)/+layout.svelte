@@ -50,20 +50,21 @@
   $: if ($page.url.pathname) {
     $currentPage = getCurrentPage();
   }
+
 </script>
 
 <div class="flex">
   <div class="flex h-screen w-1/4 flex-col bg-base-200 px-4 pt-2">
     <a
       href="/"
-      class="mb-8 flex gap-2 items-center w-max rounded-lg px-4 py-2 text-2xl transition-all hover:bg-base-300"
+      class="mb-8 flex w-max items-center gap-2 rounded-lg px-4 py-2 text-2xl transition-all hover:bg-base-300"
     >
-      <img src={Logo} alt="Oxeye Daisy flower" class="w-7 aspect-square">
+      <img src={Logo} alt="Oxeye Daisy flower" class="aspect-square w-7" />
       Oxeye Daisy
     </a>
     <Sidebar {sections} />
   </div>
-  <div class="w-3/4 px-16 pt-8">
+  <div class="prose w-3/4 px-16 pt-8">
     <slot />
   </div>
 </div>
