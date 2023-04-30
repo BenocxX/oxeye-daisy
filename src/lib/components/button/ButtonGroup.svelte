@@ -11,10 +11,10 @@
 <script lang="ts">
   import { Group } from '$lib/index.js';
   import { getClasses } from '$lib/utils.js';
-  import type { GroupTypes } from '$lib/index.js';
+  import type { ItemData } from '$lib/components/group/Group.svelte';
 
   export let direction: Direction = 'default';
-  export let buttons: GroupTypes.ItemData[] = [];
+  export let buttons: ItemData[] = [];
 
   $: classes = getClasses(directions[direction]);
 </script>
