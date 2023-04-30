@@ -11,27 +11,32 @@
     ghost: 'btn-ghost',
     link: 'btn-link',
   };
+  
   const sizes = {
     lg: 'btn-lg',
     md: '',
     sm: 'btn-sm',
     xs: 'btn-xs',
   };
+  
   const alignments = {
     start: 'justify-start',
     center: 'justify-center',
     end: 'justify-end',
   };
+
   const shapes = {
     default: '',
     square: 'btn-square',
     circle: 'btn-circle',
   };
+
   const cases = {
     default: 'normal-case',
     uppercase: 'upper-case',
     lowercase: 'lower-case',
   };
+
   export type Color = keyof typeof colors;
   export type Size = keyof typeof sizes;
   export type Alignment = keyof typeof alignments;
@@ -46,6 +51,7 @@
 
 <script lang="ts">
   import { getClasses } from '$lib/utils.js';
+
   export let color: Color = 'default';
   export let size: Size = 'md';
   export let alignment: Alignment = 'center';
@@ -58,6 +64,7 @@
   export let block: boolean = false;
   export let loading: boolean = false;
   export let noAnimation: boolean = false;
+
   $: classes = getClasses(
     colors[color],
     sizes[size],
@@ -71,6 +78,7 @@
     loading ? 'loading' : '',
     noAnimation ? 'no-animation' : ''
   );
+
   export let input: Input | undefined = undefined;
 </script>
 
