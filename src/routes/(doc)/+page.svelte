@@ -2,7 +2,7 @@
   import Button from '$lib/components/button/Button.svelte';
 </script>
 
-<div class="text-7xl">
+<div class="text-7xl mt-24">
   A complete DaisyUI,
   <br />
   component Librairy

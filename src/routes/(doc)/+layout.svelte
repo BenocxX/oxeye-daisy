@@ -1,6 +1,9 @@
 <script lang="ts">
-  import Sidebar from '$components/Sidebar.svelte';
+  import Sidebar, { type Page } from '$doc/components/Sidebar.svelte';
   import Logo from '$images/logo.png';
+  import { page } from '$app/stores';
+  import { writable } from 'svelte/store';
+  import { setContext } from 'svelte';
 
   const sections = [
     {
@@ -8,7 +11,7 @@
       pages: [
         {
           title: 'Installation',
-          route: '/docs/installation',
+          route: '/installation',
         },
       ],
     },
@@ -17,19 +20,36 @@
       pages: [
         {
           title: 'Button',
-          route: '/docs/button',
+          route: '/button',
         },
         {
           title: 'Button Group',
-          route: '/docs/button-group',
+          route: '/button-group',
         },
         {
           title: 'Group',
-          route: '/docs/group',
+          route: '/group',
         },
       ],
     },
   ];
+
+  function getCurrentPage() {
+    for (const section of sections) {
+      for (const sectionPage of section.pages) {
+        if (sectionPage.route === $page.url.pathname) {
+          return sectionPage;
+        }
+      }
+    }
+  }
+
+  let currentPage = writable<Page | undefined>(undefined);
+  setContext('currentPage', currentPage);
+
+  $: if ($page.url.pathname) {
+    $currentPage = getCurrentPage();
+  }
 </script>
 
 <div class="flex">
@@ -43,7 +63,7 @@
     </a>
     <Sidebar {sections} />
   </div>
-  <div class="w-3/4 px-16 pt-32">
+  <div class="w-3/4 px-16 pt-8">
     <slot />
   </div>
 </div>
