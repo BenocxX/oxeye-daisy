@@ -33,7 +33,7 @@
     </div>
 
     {#if index < sections.length - 1}
-      <div class="divider mx-8 my-2" />
+      <div class="divider mx-4 my-2" />
     {/if}
   {/each}
 </div>
