@@ -11,14 +11,14 @@
     ghost: 'btn-ghost',
     link: 'btn-link',
   };
-  
+
   const sizes = {
     lg: 'btn-lg',
     md: '',
     sm: 'btn-sm',
     xs: 'btn-xs',
   };
-  
+
   const alignments = {
     start: 'justify-start',
     center: 'justify-center',

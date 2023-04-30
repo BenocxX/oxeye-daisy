@@ -1,8 +1,11 @@
 # Oxeye Daisy
-A Svelte component librairy using Tailwind + DaisyUI 
+
+A Svelte component librairy using Tailwind + DaisyUI
 
 ## Button
+
 Import the `Button` component:
+
 ```svelte
 <script lang="ts">
   import { Button } from 'oxeye-daisy';
@@ -10,20 +13,19 @@ Import the `Button` component:
 ```
 
 A simple button:
+
 ```svelte
-<Button>
-  Click me
-</Button>
+<Button>Click me</Button>
 ```
 
 To customize it's style, you can follow the [DaisyUI documentation](https://daisyui.com/components/button/). Every attributes is customizable via props. Here's an example where we customize the color, the size and the outline:
+
 ```svelte
-<Button color="secondary" size="sm" outline>
-  Click me
-</Button>
+<Button color="secondary" size="sm" outline>Click me</Button>
 ```
 
 Here's the possible props to customize the `Button` component:
+
 ```svelte
 <script lang="ts">
   export let color: Color = 'default';
@@ -44,6 +46,7 @@ Here's the possible props to customize the `Button` component:
 You should get the autocomplete for props like `color`, `size`, etc... The types only represents the possible value offered by DaisyUI.
 
 If you want a `input` element of type submit:
+
 ```svelte
 <!--
 export type Input = {

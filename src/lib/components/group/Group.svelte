@@ -36,13 +36,13 @@
       }
     }
   }
-  
+
   function getSelectedItem() {
     return items.find((item) => item.id === selectedItem);
   }
 </script>
 
-<div class="{$$props.class}">
+<div class={$$props.class}>
   {#each items as item}
     <slot
       value={item.value}
