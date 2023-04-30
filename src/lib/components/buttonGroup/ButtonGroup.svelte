@@ -1,3 +1,25 @@
+<!--
+  @component
+  
+  Example:
+  ```svelte
+  <ButtonGroup
+    buttons={[
+      { value: 'First', selected: true },
+      { value: 'Second' },
+      { value: 'Third' },
+    ]}
+    let:value
+    let:select
+    let:isSelected
+  >
+    <Button on:click={select} active={isSelected()} noAnimation={isSelected()}>
+      {value}
+    </Button>
+  </ButtonGroup>
+  ```
+
+-->
 <script context="module" lang="ts">
   const directions = {
     default: '',
