@@ -89,14 +89,14 @@
     type={input.type || 'button'}
     value={input.value}
     name={input.name}
-    {...$$props}
+    {...$$restProps}
   />
 {:else}
   <button
     on:click
     class="btn {classes} {$$props.class}"
     disabled={disabled || loading}
-    {...$$props}
+    {...$$restProps}
   >
     <slot />
   </button>

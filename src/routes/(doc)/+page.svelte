@@ -3,7 +3,7 @@
 </script>
 
 <div class="text-7xl mt-24">
-  A complete DaisyUI,
+  A complete DaisyUI
   <br />
   component Librairy
 </div>

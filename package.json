@@ -25,10 +25,12 @@
     "!dist/**/*.spec.*"
   ],
   "devDependencies": {
+    "@babel/parser": "^7.21.5",
     "@sveltejs/adapter-auto": "^2.0.0",
     "@sveltejs/kit": "^1.5.0",
     "@sveltejs/package": "^2.0.0",
     "@tailwindcss/typography": "^0.5.9",
+    "@types/prettier": "^2.7.2",
     "@types/prismjs": "^1.26.0",
     "@typescript-eslint/eslint-plugin": "^5.45.0",
     "@typescript-eslint/parser": "^5.45.0",
@@ -53,6 +55,7 @@
   "dependencies": {
     "autoprefixer": "^10.4.14",
     "daisyui": "^2.51.6",
+    "iconify-icon": "^1.0.7",
     "mdsvexamples": "^0.3.3",
     "postcss": "^8.4.23",
     "svelte": "^3.54.0"
