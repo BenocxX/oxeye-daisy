@@ -1,0 +1,26 @@
+<script lang="ts">
+  import PageHeader from '$doc/components/PageHeader.svelte';
+  import CodeInline from '$doc/components/CodeInline.svelte';
+  import SectionTitle from '$doc/components/SectionTitle.svelte';
+  import type { Page } from '$doc/components/Sidebar.svelte';
+  import { getContext } from 'svelte';
+  import type { Writable } from 'svelte/store';
+
+  const test = 'lang="ts"';
+
+  const currentPage = getContext<Writable<Page | undefined>>('currentPage');
+
+  $: title = $currentPage?.title ?? 'Button';
+</script>
+
+<PageHeader title="Button" daisyComponent="button" />
+
+<SectionTitle title="Setup" />
+
+Import the <CodeInline>Button</CodeInline> component.
+
+```svelte example hideDemo
+<script>
+  import { Button } from 'oxeye-daisy';
+</script>
+```
