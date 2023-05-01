@@ -1,22 +1,19 @@
 <script context="module" lang="ts">
-  export type Page = {
+  export type PageData = {
     title: string;
     route: string;
   };
 
   export type Section = {
     title: string;
-    pages: Page[];
+    pages: PageData[];
   };
 </script>
 
 <script lang="ts">
-  import { getContext } from 'svelte';
-  import type { Writable } from 'svelte/store';
+  import { page as pageStore } from '$app/stores';
 
   export let sections: Section[];
-
-  const currentPage = getContext<Writable<Page | undefined>>('currentPage');
 </script>
 
 <div class="flex flex-col overflow-y-auto pb-8">
@@ -27,7 +24,7 @@
       </h4>
       <div class="flex flex-col">
         {#each section.pages as page}
-          {@const isCurrentPage = $currentPage === page}
+          {@const isCurrentPage = $pageStore.url.pathname === page.route}
           <a
             href={page.route}
             class="rounded-lg py-1 pl-4 transition-all
