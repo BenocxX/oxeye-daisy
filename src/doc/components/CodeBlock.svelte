@@ -30,7 +30,7 @@
   }
 </script>
 
-<div class="my-2">
+<div class="my-4">
   <div class="flex w-full flex-col overflow-hidden">
     <div
       class="flex items-center justify-between rounded-t-xl border border-neutral bg-base-300 py-2 pl-4 pr-2"

@@ -64,7 +64,7 @@
     </a>
     <Sidebar {sections} />
   </div>
-  <div class="prose max-w-none w-3/4 px-16 pt-8">
+  <div class="max-w-none w-3/4 px-16 pt-8">
     <slot />
   </div>
 </div>

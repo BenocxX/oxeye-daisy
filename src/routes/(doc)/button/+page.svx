@@ -13,18 +13,14 @@
   $: title = $currentPage?.title ?? 'Button';
 </script>
 
-# Button
-
-Check out the <a target="_blank" href="https://daisyui.com/components/button" class="link text-base-content" >DaisyUI documentation</a> for more information about the {title} component.
+<PageHeader title="Button" daisyComponent="button" />
 
 <SectionTitle title="Setup" />
 
 Import the <CodeInline>Button</CodeInline> component.
 
-```svelte example
+```svelte example hideDemo
 <script>
-  import Button from '$lib/components/button/Button.svelte';
+  import { Button } from 'oxeye-daisy';
 </script>
-
-<Button color="primary">Hello</Button>
 ```
