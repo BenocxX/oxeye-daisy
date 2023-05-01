@@ -1,5 +1,6 @@
 <script lang="ts">
   import Button from '$lib/components/button/Button.svelte';
+  import copy from 'copy-to-clipboard';
 
   export let src: string;
   export let meta: any;
@@ -10,7 +11,7 @@
   let hasCopied = false;
 
   function handleCopy() {
-    navigator.clipboard.writeText(src);
+    copy(src);
     if (hasCopied) {
       return;
     }

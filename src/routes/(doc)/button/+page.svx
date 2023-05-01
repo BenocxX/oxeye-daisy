@@ -6,14 +6,12 @@
   import { getContext } from 'svelte';
   import type { Writable } from 'svelte/store';
 
-  const test = 'lang="ts"';
-
   const currentPage = getContext<Writable<Page | undefined>>('currentPage');
 
   $: title = $currentPage?.title ?? 'Button';
 </script>
 
-<PageHeader title="Button" daisyComponent="button" />
+<PageHeader {title} daisyComponent="button" />
 
 <SectionTitle title="Setup" />
 
