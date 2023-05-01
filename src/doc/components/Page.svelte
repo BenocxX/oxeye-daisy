@@ -2,7 +2,7 @@
   <div class="flex-1">
     <slot />
   </div>
-  <div class="w-1/6">
+  <div class="w-1/6 hidden lg:block">
     <slot name="sidebar" />
   </div>
 </div>
