@@ -6,7 +6,7 @@
   import Alert from '$lib/components/alert/Alert.svelte';
 </script>
 
-<Alert type="info" class="mb-2">
+<Alert type="info" class="mb-4">
   Oxeye Daisy is a Svelte component librairy, thus only avaible in frameworks using Svelte.
 </Alert>
 
