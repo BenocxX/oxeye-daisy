@@ -2,27 +2,36 @@
   import CodeInline from '$doc/components/CodeInline.svelte';
   import SectionTitle from '$doc/components/SectionTitle.svelte';
   import CodeBlock from '$doc/components/CodeBlock.svelte';
+  import Link from '$lib/components/link/Link.svelte';
+  import Alert from '$lib/components/alert/Alert.svelte';
 </script>
 
-<SectionTitle title="Installation" />
+<Alert type="info" class="mb-2">
+  Oxeye Daisy is a Svelte component librairy, thus only avaible in frameworks using Svelte.
+</Alert>
 
-You will need TailwindCSS and DaisyUI installed in your project.
+<SectionTitle title="Dependencies" noTopMargin />
+
+You will need <Link href="https://tailwindcss.com/docs/installation" blank>TailwindCSS</Link>
+and <Link href="https://daisyui.com/docs/install/" blank>DaisyUI</Link> installed in your project.
+Follow the instructions on their websites.
 
 <CodeBlock language="bash" code="npm install tailwindcss daisyui" />
 
-Then add the following to your `tailwind.config.js` file:
+<SectionTitle title="Installation" />
 
-<CodeBlock language="javascript" code={`module.exports = {
-  // ...
-  plugins: [
-      require(\'daisyui\'),
-  ],
-}
-`} />
+Install the `oxeye-daisy` package:
 
+<CodeBlock language="bash" code="npm install oxeye-daisy" />
 
-```svelte example hideDemo
+<SectionTitle title="Usage" />
+
+Try using the <Link href="/button">`Button`</Link> components somewhere in your project.
+
+```svelte example
 <script>
   import { Button } from 'oxeye-daisy';
 </script>
+
+<Button>Click me</Button>
 ```

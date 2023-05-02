@@ -9,6 +9,8 @@
   <PageHeader title="Getting Started" />
   <GettingStartedDoc />
   <PageSidebar slot="sidebar" items={[
-    'Installation'
+    'Dependencies',
+    'Installation',
+    'Usage'
   ]} />
 </Page>

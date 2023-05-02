@@ -3,7 +3,7 @@
   import SectionTitle from '$doc/components/SectionTitle.svelte';
 </script>
 
-<SectionTitle title="Setup" />
+<SectionTitle title="Setup" noTopMargin />
 
 Import the <CodeInline>Group</CodeInline> component.
 
