@@ -1,5 +1,5 @@
 <div class="flex gap-4">
-  <div class="flex-1">
+  <div class="flex-1 max-w-full">
     <slot />
   </div>
   <div class="w-1/6 hidden lg:block">

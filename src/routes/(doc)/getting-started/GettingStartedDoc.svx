@@ -1,26 +1,25 @@
 <script lang="ts">
   import CodeInline from '$doc/components/CodeInline.svelte';
   import SectionTitle from '$doc/components/SectionTitle.svelte';
+  import CodeBlock from '$doc/components/CodeBlock.svelte';
 </script>
 
 <SectionTitle title="Installation" />
 
 You will need TailwindCSS and DaisyUI installed in your project.
 
-```bash
-npm install tailwindcss daisyui
-```
+<CodeBlock language="bash" code="npm install tailwindcss daisyui" />
 
 Then add the following to your `tailwind.config.js` file:
 
-```javascript
-module.exports = {
+<CodeBlock language="javascript" code={`module.exports = {
   // ...
   plugins: [
-    require('daisyui'),
+      require(\'daisyui\'),
   ],
 }
-```
+`} />
+
 
 ```svelte example hideDemo
 <script>
