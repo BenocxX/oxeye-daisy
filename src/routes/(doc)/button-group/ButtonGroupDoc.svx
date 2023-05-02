@@ -1,0 +1,14 @@
+<script lang="ts">
+  import CodeInline from '$doc/components/CodeInline.svelte';
+  import SectionTitle from '$doc/components/SectionTitle.svelte';
+</script>
+
+<SectionTitle title="Setup" />
+
+Import the <CodeInline>ButtonGroup</CodeInline> component.
+
+```svelte example hideDemo
+<script>
+  import { ButtonGroup } from 'oxeye-daisy';
+</script>
+```

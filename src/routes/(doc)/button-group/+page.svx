@@ -1,0 +1,14 @@
+<script lang="ts">
+  import Page from '$doc/components/Page.svelte';
+  import PageHeader from '$doc/components/PageHeader.svelte';
+  import PageSidebar from '$doc/components/PageSidebar.svelte';
+  import ButtonGroupDoc from './ButtonGroupDoc.svx';
+</script>
+
+<Page>
+  <PageHeader title="Button Group" daisyComponent="button-group" />
+  <ButtonGroupDoc />
+  <PageSidebar slot="sidebar" items={[
+    'Setup'
+  ]} />
+</Page>
