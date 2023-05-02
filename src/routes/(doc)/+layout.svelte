@@ -36,7 +36,7 @@
 <div class="drawer-mobile drawer">
   <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
   <div class="drawer-content flex flex-col">
-    <div class="fixed flex h-16 w-full items-center bg-base-200 px-2 lg:hidden">
+    <div class="fixed z-50 flex h-16 w-full items-center bg-base-200 px-2 lg:hidden">
       <label for="my-drawer-2" class="btn-ghost btn-square btn lg:hidden">
         <iconify-icon width="32px" icon="mdi:menu" />
       </label>

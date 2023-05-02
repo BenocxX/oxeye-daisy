@@ -48,6 +48,8 @@
 
 <script lang="ts">
   import { getClasses } from '$lib/utils.js';
+  import { onMount } from 'svelte';
+  import { animateScroll } from 'svelte-scrollto-element';
 
   export let href: string;
   export let color: Color = 'info';
@@ -56,17 +58,48 @@
   export let height: string = '0.1rem';
   export let target: Target | undefined = undefined;
   export let blank: boolean = false;
+  export let scrollTo:
+    | { offset?: number; container?: string }
+    | boolean
+    | undefined = undefined;
+
+  const offsetDefault = -25;
+  const containerDefault = "body";
+
+  let tagId = crypto.randomUUID();
 
   if (blank) {
     target = '_blank';
   }
 
   $: classes = getClasses(colors[color].link, hover ? 'link-hover' : '');
+
+  onMount(() => {
+    const tag = document.querySelector('[data-tag-id="' + tagId + '"]');
+    if (!tag) {
+      return;
+    }
+
+    tag.addEventListener('click', (e) => {
+      e.preventDefault();
+      if (scrollTo) {
+        let offset = offsetDefault;
+        let container = containerDefault;
+        if (typeof scrollTo !== 'boolean') {
+          offset = scrollTo.offset || offsetDefault;
+          container = scrollTo.container || containerDefault;
+        }
+
+        animateScroll.scrollTo({ element: href, offset, container });
+      }
+    });
+  });
 </script>
 
 <a
   {href}
   {target}
+  data-tag-id={tagId}
   on:click
   class="{classes} {$$props.class}"
   style="--link-theme: {colors[color].variable}; 
