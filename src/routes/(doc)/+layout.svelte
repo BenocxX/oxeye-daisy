@@ -1,7 +1,6 @@
 <script lang="ts">
-  import Sidebar, { type PageData } from '$doc/components/Sidebar.svelte';
+  import Sidebar from '$doc/components/Sidebar.svelte';
   import Logo from '$images/logo.png';
-  import { page } from '$app/stores';
 
   const sections = [
     {
