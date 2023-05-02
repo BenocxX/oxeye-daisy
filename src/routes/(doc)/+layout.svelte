@@ -8,8 +8,8 @@
       title: 'Getting Started',
       pages: [
         {
-          title: 'Installation',
-          route: '/installation',
+          title: 'Quickstart',
+          route: '/getting-started',
         },
       ],
     },

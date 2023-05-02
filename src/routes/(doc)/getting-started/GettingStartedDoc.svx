@@ -1,0 +1,29 @@
+<script lang="ts">
+  import CodeInline from '$doc/components/CodeInline.svelte';
+  import SectionTitle from '$doc/components/SectionTitle.svelte';
+</script>
+
+<SectionTitle title="Installation" />
+
+You will need TailwindCSS and DaisyUI installed in your project.
+
+```bash
+npm install tailwindcss daisyui
+```
+
+Then add the following to your `tailwind.config.js` file:
+
+```javascript
+module.exports = {
+  // ...
+  plugins: [
+    require('daisyui'),
+  ],
+}
+```
+
+```svelte example hideDemo
+<script>
+  import { Button } from 'oxeye-daisy';
+</script>
+```
