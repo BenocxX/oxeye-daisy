@@ -1,7 +1,7 @@
 {
   "name": "oxeye-daisy",
   "license": "MIT",
-  "version": "0.0.46",
+  "version": "0.0.47",
   "scripts": {
     "dev": "vite dev",
     "build": "vite build && npm run package",
@@ -59,7 +59,7 @@
     "daisyui": "^2.51.6",
     "iconify-icon": "^1.0.7",
     "mdsvexamples": "^0.3.3",
-    "oxeye-daisy": "^0.0.45",
+    "oxeye-daisy": "~0.0.45",
     "postcss": "^8.4.23",
     "svelte": "^3.54.0",
     "svelte-scrollto-element": "^0.7.0"

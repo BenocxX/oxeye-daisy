@@ -25,8 +25,6 @@
         'Color',
         'Size',
         'Alignment',
-        'Shape',
-        'Font Case',
       ]
     }
   ]} />

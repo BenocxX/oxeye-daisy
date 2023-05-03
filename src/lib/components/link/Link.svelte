@@ -66,7 +66,7 @@
   const offsetDefault = -25;
   const containerDefault = "body";
 
-  let tagId = crypto.randomUUID();
+  let tagId = Math.random().toString(36).slice(2, 9);
 
   if (blank) {
     target = '_blank';
