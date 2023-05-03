@@ -7,3 +7,26 @@ export function getClasses(...styles: (string | undefined | false)[]) {
     }
   }).join('');
 }
+
+const voidElements = [
+  'area',
+  'base',
+  'br',
+  'col',
+  'command',
+  'embed',
+  'hr',
+  'img',
+  'input',
+  'keygen',
+  'link',
+  'meta',
+  'param',
+  'source',
+  'track',
+  'wbr'
+];
+
+export function isVoidElement(tag: string) {
+  return voidElements.includes(tag);
+}

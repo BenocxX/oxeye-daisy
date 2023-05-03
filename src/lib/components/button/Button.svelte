@@ -13,7 +13,7 @@
     outline: 'btn-outline',
     ghost: 'btn-ghost',
     link: 'btn-link',
-  }
+  };
 
   const sizes = {
     lg: 'btn-lg',
@@ -45,15 +45,10 @@
   export type Alignment = keyof typeof alignments;
   export type Shape = keyof typeof shapes;
   export type Case = keyof typeof cases;
-  export type Input = {
-    value: string;
-    type?: 'button' | 'submit' | 'reset';
-    name?: string;
-  };
 </script>
 
 <script lang="ts">
-  import { getClasses } from '$lib/utils.js';
+  import { getClasses, isVoidElement } from '$lib/utils.js';
 
   export let color: Color | undefined = undefined;
   export let variant: Variant | undefined = undefined;
@@ -67,6 +62,7 @@
   export let block: boolean = false;
   export let loading: boolean = false;
   export let noAnimation: boolean = false;
+  export let element: keyof HTMLElementTagNameMap = 'button';
 
   $: classes = getClasses(
     color && colors[color],
@@ -76,31 +72,28 @@
     shape && shapes[shape],
     cases[fontCase],
     active && 'btn-active',
+    disabled && 'btn-disabled',
     wide && 'btn-wide',
     block && 'btn-block',
     loading && 'loading',
-    noAnimation && 'no-animation',
+    noAnimation && 'no-animation'
   );
-
-  export let input: Input | undefined = undefined;
 </script>
 
-{#if input}
-  <input
+{#if isVoidElement(element)}
+  <svelte:element
+    this={element}
     on:click
-    class="btn btn-active {classes} {$$props.class}"
-    type={input.type || 'button'}
-    value={input.value}
-    name={input.name}
+    class="btn {classes} {$$props.class}"
     {...$$restProps}
   />
 {:else}
-  <button
+  <svelte:element
+    this={element}
     on:click
     class="btn {classes} {$$props.class}"
-    disabled={disabled || loading}
     {...$$restProps}
   >
     <slot />
-  </button>
+  </svelte:element>
 {/if}
