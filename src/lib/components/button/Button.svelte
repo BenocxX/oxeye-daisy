@@ -31,12 +31,13 @@
   const shapes = {
     square: 'btn-square',
     circle: 'btn-circle',
+    pill: 'rounded-full'
   };
 
   const cases = {
     normal: 'normal-case',
-    upper: 'upper-case',
-    lower: 'lower-case',
+    upper: 'uppercase',
+    lower: 'lowercase',
   };
 
   export type Color = keyof typeof colors;
@@ -59,7 +60,7 @@
   export let active: boolean = false;
   export let disabled: boolean = false;
   export let wide: boolean = false;
-  export let block: boolean = false;
+  export let full: boolean = false;
   export let loading: boolean = false;
   export let noAnimation: boolean = false;
   export let element: keyof HTMLElementTagNameMap = 'button';
@@ -74,7 +75,7 @@
     active && 'btn-active',
     disabled && 'btn-disabled',
     wide && 'btn-wide',
-    block && 'btn-block',
+    full && 'btn-block',
     loading && 'loading',
     noAnimation && 'no-animation'
   );

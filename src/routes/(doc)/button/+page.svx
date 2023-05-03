@@ -19,13 +19,15 @@
     },
     'Variant',
     'Size',
-    { 
-      section: 'Props', 
-      subSections: [ 
-        'Color',
-        'Size',
-        'Alignment',
-      ]
-    }
+    'Alignment',
+    'Shape',
+    'Font case',
+    'Active',
+    'Disabled',
+    'Width',
+    'Loading',
+    'No animation',
+    'Element',
+    'Props'
   ]} />
 </Page>

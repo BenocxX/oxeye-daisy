@@ -71,7 +71,7 @@
     {#if meta && !meta.hideDemo && $$slots.example}
       <div class="flex justify-center border-x border-neutral bg-base-200">
         <div
-          class="flex overflow-x-auto items-center mx-auto gap-2 px-2 py-3"
+          class="flex overflow-x-auto items-center {meta.full ? 'w-full' : 'mx-auto'} gap-2 px-2 py-3"
         >
           <slot name="example" />
         </div>

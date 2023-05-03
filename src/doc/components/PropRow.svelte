@@ -6,6 +6,7 @@
   export let type: string;
   export let defaultValue: string | undefined = undefined;
   export let noSection: boolean = false;
+  export let sectionName: string | undefined = undefined;
 </script>
 
 <tr>
@@ -13,7 +14,7 @@
     {#if noSection}
        {name}
     {:else}
-      <Link scrollTo={{ container: '.drawer-content' }} href="#{getHrefFromCamelCase(name)}">
+      <Link scrollTo={{ container: '.drawer-content' }} href="#{getHrefFromCamelCase(sectionName || name)}">
         {name}
       </Link>
     {/if}
