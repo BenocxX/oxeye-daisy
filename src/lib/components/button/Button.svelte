@@ -12,6 +12,13 @@
     link: 'btn-link',
   };
 
+  const variants = {
+    default: '',
+    outline: 'btn-outline',
+    ghost: 'btn-ghost',
+    link: 'btn-link',
+  }
+
   const sizes = {
     lg: 'btn-lg',
     md: '',
@@ -38,6 +45,7 @@
   };
 
   export type Color = keyof typeof colors;
+  export type Variant = keyof typeof variants;
   export type Size = keyof typeof sizes;
   export type Alignment = keyof typeof alignments;
   export type Shape = keyof typeof shapes;
@@ -53,13 +61,13 @@
   import { getClasses } from '$lib/utils.js';
 
   export let color: Color = 'default';
+  export let variant: Variant = 'default';
   export let size: Size = 'md';
   export let alignment: Alignment = 'center';
   export let shape: Shape = 'default';
   export let fontCase: Case = 'default';
   export let active: boolean = false;
   export let disabled: boolean = false;
-  export let outline: boolean = false;
   export let wide: boolean = false;
   export let block: boolean = false;
   export let loading: boolean = false;
@@ -67,12 +75,12 @@
 
   $: classes = getClasses(
     colors[color],
+    variants[variant],
     sizes[size],
     alignments[alignment],
     shapes[shape],
     cases[fontCase],
     active ? 'btn-active' : '',
-    outline ? 'btn-outline' : '',
     wide ? 'btn-wide' : '',
     block ? 'btn-block' : '',
     loading ? 'loading' : '',
@@ -85,7 +93,7 @@
 {#if input}
   <input
     on:click
-    class="btn {classes} {$$props.class}"
+    class="btn btn-active {classes} {$$props.class}"
     type={input.type || 'button'}
     value={input.value}
     name={input.name}
