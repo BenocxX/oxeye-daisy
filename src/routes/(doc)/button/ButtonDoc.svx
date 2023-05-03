@@ -263,7 +263,7 @@ you can customize the button as you would with a regular HTML element.
 <Button>button</Button>
 <Button element="a" href="#">a</Button>
 <Button element="input" type="submit" value="input" />
-<Button element="div" data-cutsom-attribute>div</Button>
+<Button element="div" data-custom-attribute>div</Button>
 ```
 
 <SectionTitle title="Props" />
