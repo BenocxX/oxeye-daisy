@@ -105,45 +105,54 @@ the button is medium sized.
   <PropRow
     name="alignment"
     type="'start' | 'center' | 'end'"
+    noSection
   />
   <PropRow
     name="shape"
     type="'square' | 'circle'"
+    noSection
   />
   <PropRow
     name="fontCase"
     type="'normal' | 'upper' | 'lower'"
     defaultValue="normal"
+    noSection
   />
   <PropRow
     name="active"
     type="boolean"
     defaultValue="false"
+    noSection
   />
   <PropRow
     name="disabled"
     type="boolean"
     defaultValue="false"
+    noSection
   />
   <PropRow
     name="wide"
     type="boolean"
     defaultValue="false"
+    noSection
   />
   <PropRow
     name="block"
     type="boolean"
     defaultValue="false"
+    noSection
   />
   <PropRow
     name="loading"
     type="boolean"
     defaultValue="false"
+    noSection
   />
   <PropRow
     name="noAnimation"
     type="boolean"
     defaultValue="false"
+    noSection
   />
 </Table>
 
