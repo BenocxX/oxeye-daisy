@@ -5,7 +5,7 @@
   export let items: (string | { section: string; subSections: string[] })[];
 </script>
 
-<div class="flex flex-col gap-2">
+<div class="flex flex-col gap-2 fixed">
   <h4 class="text-xl">Sections</h4>
   <ul class="space-y-1">
     {#each items as item}

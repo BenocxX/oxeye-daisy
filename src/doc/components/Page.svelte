@@ -1,4 +1,4 @@
-<div class="flex gap-4">
+<div class="flex gap-8">
   <div class="flex-1 max-w-full">
     <slot />
   </div>
