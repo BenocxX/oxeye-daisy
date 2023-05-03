@@ -20,6 +20,13 @@
     'Variant',
     'Size',
     'Alignment',
+    'Shape',
+    'Font case',
+    'Active',
+    'Disabled',
+    'Width',
+    'Loading',
+    'No animation',
     'Element',
     'Props'
   ]} />

@@ -103,10 +103,151 @@ the button is aligned to the center.
 </div>
 ```
 
+<SectionTitle title="Shape" />
+
+You can customize the shape of the button by using the `shape` prop.
+
+<Alert class="my-2" type="info">
+  Note that the <CodeInline>square</CodeInline> and <CodeInline>circle</CodeInline>
+  shapes give the button a 1:1 aspect ratio.
+</Alert>
+
+```svelte example hideScript
+<script>
+  import { Button } from 'oxeye-daisy';
+</script>
+
+<Button shape="square">
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M10 20v-6h4v6h5v-8h3L12 3L2 12h3v8h5Z"/></svg>
+</Button>
+<Button shape="circle">
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M10 20v-6h4v6h5v-8h3L12 3L2 12h3v8h5Z"/></svg>
+</Button>
+<Button shape="pill">Pill shape</Button>
+```
+
+<SectionTitle title="Font case" />
+
+You can customize the font casing of the button's text by using the `fontCase` prop. 
+
+```svelte example hideScript
+<script>
+  import { Button } from 'oxeye-daisy';
+</script>
+
+<Button fontCase="lower">Lower</Button>
+<Button fontCase="normal">Normal</Button> <!-- Default -->
+<Button fontCase="upper">Upper</Button>
+```
+
+<SectionTitle title="Active" />
+
+You can customize set the button to an active state by using the `active` prop.
+
+<Alert class="my-2" type="info">
+  Note that the <CodeInline>active</CodeInline> state will do nothing on colors 
+  that don't have a focus version.
+</Alert>
+
+```svelte example hideScript
+<script>
+  import { Button } from 'oxeye-daisy';
+</script>
+
+<div class="flex flex-col space-y-2">
+  <div>
+    <Button>Not active</Button>
+    <Button active>Active</Button>
+  </div>
+  <div>
+    <Button color="primary">Not active</Button>
+    <Button color="primary" active>Active</Button>
+  </div>
+  <div>
+    <Button color="secondary">Not active</Button>
+    <Button color="secondary" active>Active</Button>
+  </div>
+  <div>
+    <Button color="accent">Not active</Button>
+    <Button color="accent" active>Active</Button>
+  </div>
+  <div>
+    <Button variant="outline">Not active</Button>
+    <Button variant="outline" active>Active</Button>
+  </div>
+  <div>
+    <Button variant="ghost">Not active</Button>
+    <Button variant="ghost" active>Active</Button>
+  </div>
+</div>
+```
+
+<SectionTitle title="Disabled" />
+
+You can customize disabled the button by using the `disabled` prop.
+
+```svelte example hideScript
+<script>
+  import { Button } from 'oxeye-daisy';
+</script>
+
+<Button>Not Disabled</Button>
+<Button disabled>Disabled</Button>
+```
+
+<SectionTitle title="Width" />
+
+You can customize change the button's width using either the `wide` or `full` prop.
+
+```svelte example hideScript full
+<script>
+  import { Button } from 'oxeye-daisy';
+</script>
+
+<div class="flex flex-col gap-2 items-center w-full">
+  <Button wide>Wide (16rem)</Button>
+  <Button class="w-[calc(100%-10rem)]">Custom width</Button>
+  <Button full>100% of the parent width</Button>
+</div>
+```
+
+<SectionTitle title="Loading" />
+
+You can set the button to a loading state by using the `loading` prop.
+
+<Alert class="my-2">
+  I recommend using the <CodeInline>loading</CodeInline> prop with the
+  <CodeInline>disabled</CodeInline> prop.
+</Alert>
+
+```svelte example hideScript
+<script>
+  import { Button } from 'oxeye-daisy';
+</script>
+
+<div class="flex flex-col gap-2">
+  <Button>Not loading</Button>
+  <Button loading>Loading</Button>
+  <Button loading disabled>Loading & Disabled</Button>
+</div>
+```
+
+<SectionTitle title="No animation" />
+
+You can disable the button's animation by using the `noAnimation` prop.
+
+```svelte example hideScript
+<script>
+  import { Button } from 'oxeye-daisy';
+</script>
+
+<Button noAnimation>No animation</Button>
+```
+
 <SectionTitle title="Element" />
 
-Sometime we need an `input` or `a` element to be styled like a button. You can
-use the `element` prop to specify the HTML element you want to use. By defualt,
+Sometime we need an `input` or an `a` element to be styled like a button. You can
+use the `element` prop to specify the HTML element you want to use. By default,
 the button is a `button` element.
 
 <br />
@@ -146,50 +287,44 @@ you can customize the button as you would with a regular HTML element.
   />
   <PropRow
     name="shape"
-    type="'square' | 'circle'"
-    noSection
+    type="'square' | 'circle' | 'pill'"
   />
   <PropRow
     name="fontCase"
     type="'normal' | 'upper' | 'lower'"
     defaultValue="normal"
-    noSection
   />
   <PropRow
     name="active"
     type="boolean"
     defaultValue="false"
-    noSection
   />
   <PropRow
     name="disabled"
     type="boolean"
     defaultValue="false"
-    noSection
   />
   <PropRow
     name="wide"
     type="boolean"
     defaultValue="false"
-    noSection
+    sectionName="Width"
   />
   <PropRow
     name="block"
     type="boolean"
     defaultValue="false"
-    noSection
+    sectionName="Width"
   />
   <PropRow
     name="loading"
     type="boolean"
     defaultValue="false"
-    noSection
   />
   <PropRow
     name="noAnimation"
     type="boolean"
     defaultValue="false"
-    noSection
   />
   <PropRow
     name="element"
