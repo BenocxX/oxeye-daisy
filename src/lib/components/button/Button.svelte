@@ -48,7 +48,7 @@
 </script>
 
 <script lang="ts">
-  import { getClasses, isVoidElement } from '$lib/utils.js';
+  import { excludePropsFromRest, getClasses, isVoidElement } from '$lib/utils.js';
 
   export let color: Color | undefined = undefined;
   export let variant: Variant | undefined = undefined;
@@ -85,14 +85,14 @@
     this={element}
     on:click
     class="btn {classes} {$$props.class}"
-    {...$$restProps}
+    {...excludePropsFromRest($$restProps)}
   />
 {:else}
   <svelte:element
     this={element}
     on:click
     class="btn {classes} {$$props.class}"
-    {...$$restProps}
+    {...excludePropsFromRest($$restProps)}
   >
     <slot />
   </svelte:element>
