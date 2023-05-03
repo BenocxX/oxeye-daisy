@@ -9,6 +9,16 @@
   <PageHeader title="Button" daisyComponent="button" />
   <ButtonDoc />
   <PageSidebar slot="sidebar" items={[
-    'Setup'
+    'Setup',
+    { 
+      section: 'Props', 
+      subSections: [ 
+        'Color',
+        'Size',
+        'Alignment',
+        'Shape',
+        'Font Case',
+      ]
+    }
   ]} />
 </Page>

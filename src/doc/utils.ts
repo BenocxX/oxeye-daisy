@@ -21,3 +21,16 @@ export function getPrismLanguage(language: Omit<PrismLanguage, 'svelte'>) {
 export function capitalizeFirstLetter(string: string) {
   return string.charAt(0).toUpperCase() + string.slice(1);
 }
+
+export function getHrefFromString(string: string) {
+  return string
+    .toLowerCase()
+    .replace(/ /g, '-')
+    .replace(/[^\w-]+/g, '');
+}
+
+export function getHrefFromCamelCase(string: string) {
+  return string
+    .replace(/([a-z])([A-Z])/g, '$1-$2')
+    .toLowerCase();
+}

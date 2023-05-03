@@ -1,6 +1,8 @@
 <script lang="ts">
   import CodeInline from '$doc/components/CodeInline.svelte';
   import SectionTitle from '$doc/components/SectionTitle.svelte';
+  import Table from '$lib/components/table/Table.svelte';
+  import PropRow from '$doc/components/PropRow.svelte';
 </script>
 
 <SectionTitle title="Setup" noTopMargin />
@@ -12,3 +14,50 @@ Import the <CodeInline>Button</CodeInline> component.
   import { Button } from 'oxeye-daisy';
 </script>
 ```
+
+<SectionTitle title="Props" />
+
+<Table compact titles={['Name', 'Type', 'Default value']}>
+  <PropRow
+    name="color"
+    type="'default' | 'primary' | 'secondary' | 'accent' | 'info' | 'success' | 'warning' | 'error' | 'ghost' | 'link'"
+    defaultValue="default"
+  />
+  <PropRow
+    name="size"
+    type="'lg' | 'md' | 'sm' | 'xs'"
+    defaultValue="md"
+  />
+  <PropRow
+    name="alignment"
+    type="'start' | 'center' | 'end'"
+    defaultValue="center"
+  />
+  <PropRow
+    name="shape"
+    type="'default' | 'square' | 'circle'"
+    defaultValue="default"
+  />
+  <PropRow
+    name="fontCase"
+    type=""
+    defaultValue=""
+  />
+  <PropRow
+    name=""
+    type=""
+    defaultValue=""
+  />
+  <PropRow
+    name=""
+    type=""
+    defaultValue=""
+  />
+</Table>
+
+
+<SectionTitle subSection title="Color" />
+<SectionTitle subSection title="Size" />
+<SectionTitle subSection title="Alignment" />
+<SectionTitle subSection title="Shape" />
+<SectionTitle subSection title="Font Case" />
