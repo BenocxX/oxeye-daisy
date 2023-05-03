@@ -30,3 +30,8 @@ const voidElements = [
 export function isVoidElement(tag: string) {
   return voidElements.includes(tag);
 }
+
+export function excludePropsFromRest($$restProps: SvelteRestProps) {
+  const { class: _, ...rest } = $$restProps;
+  return rest;
+}
