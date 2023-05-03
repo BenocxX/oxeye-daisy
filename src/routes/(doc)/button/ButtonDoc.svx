@@ -1,0 +1,152 @@
+<script lang="ts">
+  import SectionTitle from '$doc/components/SectionTitle.svelte';
+  import PropRow from '$doc/components/PropRow.svelte';
+  import CodeInline from '$doc/components/CodeInline.svelte';
+  import Table from '$lib/components/table/Table.svelte';
+  import Alert from '$lib/components/alert/Alert.svelte';
+</script>
+
+<SectionTitle title="Quick start" noTopMargin />
+
+Simply import and use the `Button` component with the desired text inside.
+
+```svelte example
+<script>
+  import { Button } from 'oxeye-daisy';
+</script>
+
+<Button>Click me</Button>
+```
+
+<SectionTitle title="Color" />
+
+You can customize the color of the button by using the `color` prop. By default,
+the button uses the `neutral` color.
+
+<SectionTitle subSection title="Brand colors" />
+
+DaisyUI offers 3 brand colors: `primary`, `secondary` and `accent`.
+
+```svelte example hideScript
+<script>
+  import { Button } from 'oxeye-daisy';
+</script>
+
+<Button color="primary">Primary</Button>
+<Button color="secondary">Secondary</Button>
+<Button color="accent">Accent</Button>
+```
+
+<Alert class="mb-4">
+  You can use the <CodeInline>active</CodeInline> prop to make the button appear as active (focus version of the color).
+</Alert>
+
+<SectionTitle subSection title="State colors" />
+
+DaisyUI offers 4 state colors: `info`, `success`, `warning` and `error`.
+
+```svelte example hideScript
+<script>
+  import { Button } from 'oxeye-daisy';
+</script>
+
+<Button color="info">Info</Button>
+<Button color="success">Success</Button>
+<Button color="warning">Warning</Button>
+<Button color="error">Error</Button>
+```
+
+<SectionTitle title="Variant" />
+
+You can customize the button's variant by using the `variant` prop.
+
+```svelte example hideScript
+<script>
+  import { Button } from 'oxeye-daisy';
+</script>
+
+<Button variant="default">Default</Button>
+<Button variant="outline">Outline</Button>
+<Button variant="ghost">Ghost</Button>
+<Button variant="link">Link</Button>
+```
+
+<SectionTitle title="Size" />
+
+You can customize the size of the button by using the `size` prop. By default,
+the button is medium sized.
+
+```svelte example hideScript
+<script>
+  import { Button } from 'oxeye-daisy';
+</script>
+
+<Button size="xs">Tiny</Button>
+<Button size="sm">Small</Button>
+<Button size="md">Medium</Button> <!-- Default -->
+<Button size="lg">Large</Button>
+```
+
+<SectionTitle title="Props" />
+
+<Table compact titles={['Name', 'Type', 'Default value']}>
+  <PropRow
+    name="color"
+    type="'primary' | 'secondary' | 'accent' | 'info' | 'success' | 'warning' | 'error'"
+  />
+  <PropRow
+    name="variant"
+    type="'ghost' | 'link' | 'outline'"
+  />
+  <PropRow
+    name="size"
+    type="'lg' | 'md' | 'sm' | 'xs'"
+  />
+  <PropRow
+    name="alignment"
+    type="'start' | 'center' | 'end'"
+  />
+  <PropRow
+    name="shape"
+    type="'square' | 'circle'"
+  />
+  <PropRow
+    name="fontCase"
+    type="'normal' | 'upper' | 'lower'"
+    defaultValue="normal"
+  />
+  <PropRow
+    name="active"
+    type="boolean"
+    defaultValue="false"
+  />
+  <PropRow
+    name="disabled"
+    type="boolean"
+    defaultValue="false"
+  />
+  <PropRow
+    name="wide"
+    type="boolean"
+    defaultValue="false"
+  />
+  <PropRow
+    name="block"
+    type="boolean"
+    defaultValue="false"
+  />
+  <PropRow
+    name="loading"
+    type="boolean"
+    defaultValue="false"
+  />
+  <PropRow
+    name="noAnimation"
+    type="boolean"
+    defaultValue="false"
+  />
+</Table>
+
+<SectionTitle title="Events" />
+
+<SectionTitle title="Slots" />

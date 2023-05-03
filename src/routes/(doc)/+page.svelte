@@ -16,6 +16,6 @@
   <a href="https://daisyui.com" class="link">DaisyUI</a> with a few changes.
 </p>
 
-<a href="/docs/installation">
+<a href="/getting-started">
   <Button color="primary">Get Started</Button>
 </a>

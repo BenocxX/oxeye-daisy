@@ -1,17 +1,14 @@
 <script lang="ts">
-  import Sidebar, { type Page } from '$doc/components/Sidebar.svelte';
+  import Sidebar from '$doc/components/Sidebar.svelte';
   import Logo from '$images/logo.png';
-  import { page } from '$app/stores';
-  import { writable } from 'svelte/store';
-  import { setContext } from 'svelte';
 
   const sections = [
     {
       title: 'Getting Started',
       pages: [
         {
-          title: 'Installation',
-          route: '/installation',
+          title: 'Quickstart',
+          route: '/getting-started',
         },
       ],
     },
@@ -33,38 +30,42 @@
       ],
     },
   ];
-
-  function getCurrentPage() {
-    for (const section of sections) {
-      for (const sectionPage of section.pages) {
-        if (sectionPage.route === $page.url.pathname) {
-          return sectionPage;
-        }
-      }
-    }
-  }
-
-  let currentPage = writable<Page | undefined>(undefined);
-  setContext('currentPage', currentPage);
-
-  $: if ($page.url.pathname) {
-    $currentPage = getCurrentPage();
-  }
-
 </script>
 
-<div class="flex">
-  <div class="flex h-screen w-1/4 flex-col bg-base-200 px-4 pt-2">
-    <a
-      href="/"
-      class="mb-8 flex w-max items-center gap-2 rounded-lg px-4 py-2 text-2xl transition-all hover:bg-base-300"
-    >
-      <img src={Logo} alt="Oxeye Daisy flower" class="aspect-square w-7" />
-      Oxeye Daisy
-    </a>
-    <Sidebar {sections} />
+<div class="drawer-mobile drawer">
+  <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
+  <div class="drawer-content flex flex-col">
+    <div class="fixed z-50 flex h-16 w-full items-center bg-base-200 px-2 lg:hidden">
+      <label for="my-drawer-2" class="btn-ghost btn-square btn lg:hidden">
+        <iconify-icon width="32px" icon="mdi:menu" />
+      </label>
+      <a
+        href="/"
+        class="flex w-max items-center gap-2 rounded-lg px-4 py-2 text-2xl transition-all hover:bg-base-300"
+      >
+        <img src={Logo} alt="Oxeye Daisy flower" class="aspect-square w-7" />
+        Oxeye Daisy
+      </a>
+    </div>
+    <div class="mx-8 mt-[6rem] lg:mx-12 lg:mt-8">
+      <div class="w-full max-w-none">
+        <slot />
+      </div>
+    </div>
   </div>
-  <div class="max-w-none w-3/4 px-16 pt-8">
-    <slot />
+  <div class="drawer-side">
+    <label for="my-drawer-2" class="drawer-overlay" />
+    <ul class="menu w-80">
+      <div class="flex h-screen flex-col bg-base-200 px-4 pt-2">
+        <a
+          href="/"
+          class="mb-8 flex w-max items-center gap-2 rounded-lg px-4 py-2 text-2xl transition-all hover:bg-base-300"
+        >
+          <img src={Logo} alt="Oxeye Daisy flower" class="aspect-square w-7" />
+          Oxeye Daisy
+        </a>
+        <Sidebar {sections} />
+      </div>
+    </ul>
   </div>
 </div>

@@ -10,7 +10,7 @@
     <a
       target="_blank"
       href="https://daisyui.com/components/{daisyComponent}"
-      class="link text-base-content"
+      class="link link-hover text-base-content"
     >
       DaisyUI documentation
     </a>
