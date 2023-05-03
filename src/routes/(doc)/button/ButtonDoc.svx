@@ -86,6 +86,45 @@ the button is medium sized.
 <Button size="lg">Large</Button>
 ```
 
+<SectionTitle title="Alignment" />
+
+You can customize the aligment of the button by using the `aligment` prop. By default,
+the button is aligned to the center.
+
+```svelte example hideScript
+<script>
+  import { Button } from 'oxeye-daisy';
+</script>
+
+<div class="flex flex-col gap-2">
+  <Button alignment="start" wide>Start</Button>
+  <Button alignment="center" wide>Center</Button> <!-- Default -->
+  <Button alignment="end" wide>End</Button>
+</div>
+```
+
+<SectionTitle title="Element" />
+
+Sometime we need an `input` or `a` element to be styled like a button. You can
+use the `element` prop to specify the HTML element you want to use. By defualt,
+the button is a `button` element.
+
+<br />
+
+We are using `{...$$restProps}` to pass all the props to the element. That way,
+you can customize the button as you would with a regular HTML element.
+
+```svelte example hideScript
+<script>
+  import { Button } from 'oxeye-daisy';
+</script>
+
+<Button>button</Button>
+<Button element="a" href="#">a</Button>
+<Button element="input" type="submit" value="input" />
+<Button element="div" data-cutsom-attribute>div</Button>
+```
+
 <SectionTitle title="Props" />
 
 <Table compact titles={['Name', 'Type', 'Default value']}>
@@ -104,7 +143,6 @@ the button is medium sized.
   <PropRow
     name="alignment"
     type="'start' | 'center' | 'end'"
-    noSection
   />
   <PropRow
     name="shape"
@@ -152,6 +190,11 @@ the button is medium sized.
     type="boolean"
     defaultValue="false"
     noSection
+  />
+  <PropRow
+    name="element"
+    type='Any HTML element as a string ("div", "a", "input", ...)'
+    defaultValue="button"
   />
 </Table>
 

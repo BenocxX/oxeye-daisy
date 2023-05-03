@@ -19,13 +19,8 @@
     },
     'Variant',
     'Size',
-    { 
-      section: 'Props', 
-      subSections: [ 
-        'Color',
-        'Size',
-        'Alignment',
-      ]
-    }
+    'Alignment',
+    'Element',
+    'Props'
   ]} />
 </Page>
