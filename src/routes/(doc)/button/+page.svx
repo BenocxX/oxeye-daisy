@@ -9,7 +9,16 @@
   <PageHeader title="Button" daisyComponent="button" />
   <ButtonDoc />
   <PageSidebar slot="sidebar" items={[
-    'Setup',
+    'Quick start',
+    { 
+      section: 'Color', 
+      subSections: [ 
+        'Brand colors',
+        'State colors',
+      ]
+    },
+    'Variant',
+    'Size',
     { 
       section: 'Props', 
       subSections: [ 

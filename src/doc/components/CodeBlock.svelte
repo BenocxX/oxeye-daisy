@@ -62,7 +62,7 @@
         class="tooltip tooltip-left tooltip-accent transition-all {clipboardStyle}"
         data-tip={clipboardTooltip}
       >
-        <Button color="ghost" size="sm" on:click={handleCopy}>
+        <Button variant="ghost" size="sm" on:click={handleCopy}>
           Copy
           <iconify-icon width="20px" class="ml-2" icon={clipboardIcon} />
         </Button>
@@ -71,7 +71,7 @@
     {#if meta && !meta.hideDemo && $$slots.example}
       <div class="flex justify-center border-x border-neutral bg-base-200">
         <div
-          class="flex overflow-x-auto mx-auto gap-2 px-2 py-3"
+          class="flex overflow-x-auto items-center mx-auto gap-2 px-2 py-3"
         >
           <slot name="example" />
         </div>

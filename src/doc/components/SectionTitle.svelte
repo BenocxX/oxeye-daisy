@@ -10,8 +10,9 @@
 <a
   href="#{id}"
   id={id}
-  class:mt-8={!noTopMargin}
-  class="mb-4 flex w-max items-center gap-1 {subSection ? 'text-xl' : 'text-3xl'}"
+  class:mt-16={!noTopMargin && !subSection}
+  class:mt-6={!noTopMargin && subSection}
+  class="flex w-max items-center gap-1 {subSection ? 'mb-2 text-xl' : 'mb-4 text-3xl'}"
 >
   <span class="text-xl font-semibold text-base-content/25">#</span>
   {title}

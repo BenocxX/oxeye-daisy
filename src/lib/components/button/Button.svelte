@@ -1,6 +1,5 @@
 <script context="module" lang="ts">
   const colors = {
-    default: '',
     primary: 'btn-primary',
     secondary: 'btn-secondary',
     accent: 'btn-accent',
@@ -8,12 +7,9 @@
     success: 'btn-success',
     warning: 'btn-warning',
     error: 'btn-error',
-    ghost: 'btn-ghost',
-    link: 'btn-link',
   };
 
   const variants = {
-    default: '',
     outline: 'btn-outline',
     ghost: 'btn-ghost',
     link: 'btn-link',
@@ -21,7 +17,7 @@
 
   const sizes = {
     lg: 'btn-lg',
-    md: '',
+    md: 'btn-md',
     sm: 'btn-sm',
     xs: 'btn-xs',
   };
@@ -33,15 +29,14 @@
   };
 
   const shapes = {
-    default: '',
     square: 'btn-square',
     circle: 'btn-circle',
   };
 
   const cases = {
-    default: 'normal-case',
-    uppercase: 'upper-case',
-    lowercase: 'lower-case',
+    normal: 'normal-case',
+    upper: 'upper-case',
+    lower: 'lower-case',
   };
 
   export type Color = keyof typeof colors;
@@ -60,12 +55,12 @@
 <script lang="ts">
   import { getClasses } from '$lib/utils.js';
 
-  export let color: Color = 'default';
-  export let variant: Variant = 'default';
-  export let size: Size = 'md';
-  export let alignment: Alignment = 'center';
-  export let shape: Shape = 'default';
-  export let fontCase: Case = 'default';
+  export let color: Color | undefined = undefined;
+  export let variant: Variant | undefined = undefined;
+  export let size: Size | undefined = undefined;
+  export let alignment: Alignment | undefined = undefined;
+  export let shape: Shape | undefined = undefined;
+  export let fontCase: Case = 'normal';
   export let active: boolean = false;
   export let disabled: boolean = false;
   export let wide: boolean = false;
@@ -74,17 +69,17 @@
   export let noAnimation: boolean = false;
 
   $: classes = getClasses(
-    colors[color],
-    variants[variant],
-    sizes[size],
-    alignments[alignment],
-    shapes[shape],
+    color && colors[color],
+    variant && variants[variant],
+    size && sizes[size],
+    alignment && alignments[alignment],
+    shape && shapes[shape],
     cases[fontCase],
-    active ? 'btn-active' : '',
-    wide ? 'btn-wide' : '',
-    block ? 'btn-block' : '',
-    loading ? 'loading' : '',
-    noAnimation ? 'no-animation' : ''
+    active && 'btn-active',
+    wide && 'btn-wide',
+    block && 'btn-block',
+    loading && 'loading',
+    noAnimation && 'no-animation',
   );
 
   export let input: Input | undefined = undefined;
